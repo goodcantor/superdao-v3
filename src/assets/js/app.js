@@ -1,13 +1,19 @@
-const iconMenu = document.querySelector('.header__icon');
-const menuBody = document.querySelector('.header__menu');
-if (iconMenu) {
-	iconMenu.addEventListener('click', function (e) {
-		document.body.classList.toggle('_lock');
-		iconMenu.classList.toggle('_active');
-		menuBody.classList.toggle('_active');
-	});
-}
-// End of Burger
+//burger
+let burger = document.querySelector('.header__burger');
+let cross = document.querySelector('.header__top-cross');
+
+let body = document.querySelector('body');
+
+burger.onclick = function () {
+	body.classList.add('opened');
+
+	body.classList.add('scroll-hidden');
+};
+cross.onclick = function () {
+	body.classList.remove('opened');
+
+	body.classList.remove('scroll-hidden');
+};
 
 const menuLinks = document.querySelectorAll('.nav__link[data-goto]');
 if (menuLinks.length > 0) {
@@ -42,6 +48,33 @@ if (menuLinks.length > 0) {
 	}
 }
 // End of Scroll
+
+const tabs = document.getElementById('tabs');
+const content = document.querySelectorAll('.content__item');
+
+const changeClass = (el, tabs) => {
+	for (let i = 0; i < tabs.children.length; i++) {
+		tabs.children[i].classList.remove('active');
+	}
+	el.classList.add('active');
+};
+
+const listener = (tabs, content) => {
+	tabs.addEventListener('click', (e) => {
+		const currentTab = e.target.dataset.btn;
+		changeClass(e.target, tabs);
+		for (let i = 0; i < content.length; i++) {
+			content[i].classList.remove('active');
+			if (content[i].dataset.content === currentTab) {
+				content[i].classList.add('active');
+			}
+		}
+	});
+};
+
+listener(tabs, content);
+
+// End of Tabs
 
 const getTopElement = (element) => {
 	let clientTop = document.documentElement.clientTop;
@@ -92,9 +125,9 @@ window.addEventListener('scroll', () => {
 		words[6].classList.add('active');
 	} else words[6].classList.remove('active');
 
-	console.log(sevenWord);
-	console.log(window.pageYOffset);
-	console.log(sectionWordEnd);
+	// console.log(sevenWord);
+	// console.log(window.pageYOffset);
+	// console.log(sectionWordEnd);
 });
 
 const constellation = (element) => {
@@ -104,6 +137,17 @@ const constellation = (element) => {
 };
 
 document.querySelectorAll('.constellation').forEach(constellation);
+
+const navbar = document.querySelector('.header');
+
+window.onscroll = function () {
+	const top = window.scrollY;
+	if (top == 0) {
+		navbar.classList.remove('header-background');
+	} else {
+		navbar.classList.add('header-background');
+	}
+};
 
 // End of Word
 
@@ -198,4 +242,4 @@ document.querySelectorAll('.constellation').forEach(constellation);
 //   } else cards[6].classList.remove('active')
 // })
 
-// // End Of Step
+// End Of Step

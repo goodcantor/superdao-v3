@@ -1,6 +1,6 @@
-@import "mixins";
-@import "vars";
-@import "vendor/reset";
+@import 'mixins';
+@import 'vars';
+@import 'vendor/reset';
 
 .paddings {
   padding: 100px 0;
@@ -57,13 +57,15 @@ html {
 }
 
 body {
-  font-family: "Montserrat", "Loos Wide", sans-serif;
+  font-family: 'Montserrat', 'Loos Wide', sans-serif;
   font-weight: 600;
   font-size: 22px;
   line-height: 27px;
   color: $white;
 
   background: $bg;
+
+  overflow-x: hidden;
 
   &._lock {
     overflow: hidden;
@@ -86,10 +88,10 @@ a {
 }
 
 .h2 {
-  font-family: "Loos Wide";
+  font-family: 'Loos Wide';
   font-weight: 700;
   font-size: 54px;
-  line-height: 92px;
+  line-height: 80px;
 
   text-align: center;
 
@@ -106,18 +108,20 @@ a {
 }
 
 /* Blocks */
-@import "blocks/footer";
-@import "blocks/header";
-@import "blocks/container";
-@import "blocks/btn";
-@import "blocks/intro";
-@import "blocks/ready";
-@import "blocks/word";
-@import "blocks/benefits";
+@import 'blocks/footer';
+@import 'blocks/header';
+@import 'blocks/container';
+@import 'blocks/btn';
+@import 'blocks/intro';
+@import 'blocks/ready';
+@import 'blocks/word';
+@import 'blocks/tabs';
+@import 'blocks/benefits';
 // @import 'blocks/step';
-@import "blocks/digest";
-@import "blocks/press";
-@import "blocks/podcast";
-@import "blocks/idea";
-@import "blocks/stars";
-@import "blocks/help";
+@import 'blocks/digest';
+@import 'blocks/brands';
+@import 'blocks/press';
+@import 'blocks/podcast';
+@import 'blocks/idea';
+@import 'blocks/stars';
+@import 'blocks/help';
