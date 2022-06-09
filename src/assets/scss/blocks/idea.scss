@@ -1,4 +1,13 @@
 .idea {
+  padding-bottom: 200px;
+
+  @include breakpoint(1200px) {
+    padding-bottom: 120px;
+  }
+  @include breakpoint(768px) {
+    padding-bottom: 80px;
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -11,7 +20,7 @@
   &__title {
     margin-bottom: 16px;
 
-    @include breakpoint(992px) {
+    @include breakpoint(1200px) {
       margin-bottom: 20px;
     }
     @include breakpoint(768px) {
@@ -31,7 +40,7 @@
 
     color: #495663;
 
-    @include breakpoint(992px) {
+    @include breakpoint(1200px) {
       font-size: 30px;
       line-height: 50px;
     }
@@ -50,7 +59,7 @@
     align-items: center;
     gap: 32px;
 
-    @include breakpoint(992px) {
+    @include breakpoint(1200px) {
       margin-top: 42px;
 
       gap: 24px;
@@ -134,7 +143,7 @@
 
     color: #4d3705;
 
-    @include breakpoint(992px) {
+    @include breakpoint(1200px) {
       font-size: 18px;
       line-height: 22px;
     }
@@ -153,7 +162,7 @@
 
     opacity: 0.7;
 
-    @include breakpoint(992px) {
+    @include breakpoint(1200px) {
       font-size: 14px;
       line-height: 17px;
     }

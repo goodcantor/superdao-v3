@@ -4,7 +4,7 @@
 
 .paddings {
 	padding: 100px 0;
-	@include breakpoint(992px) {
+	@include breakpoint(1200px) {
 		padding: 50px 0;
 	}
 	@include breakpoint(768px) {
@@ -51,9 +51,13 @@
 // 	right: 15px;
 // }
 
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 html {
 	font-size: 22px;
-	overflow-x: hidden;
 }
 
 body {
@@ -97,7 +101,7 @@ a {
 
 	color: #fff;
 
-	@include breakpoint(992px) {
+	@include breakpoint(1200px) {
 		font-size: 36px;
 		line-height: 45px;
 	}
@@ -125,8 +129,3 @@ a {
 @import 'blocks/idea';
 @import 'blocks/stars';
 @import 'blocks/help';
-
-* {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
