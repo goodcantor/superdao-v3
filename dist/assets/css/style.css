@@ -546,6 +546,7 @@ a:focus {
 }
 
 .footer__social {
+    padding: 30 0;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -989,7 +990,7 @@ footer .header__li-item {
     flex-direction: column;
     gap: 12px;
     width: 100%;
-    margin-bottom: 62px;
+    margin-bottom: 32px;
 }
 
 .header input {
@@ -2646,8 +2647,8 @@ footer .header__li-item {
     -ms-flex-align: center;
     align-items: center;
     gap: 40px;
-    -webkit-animation: 60s infinite linear moveBrandsAlt;
-    animation: 60s infinite linear moveBrandsAlt;
+    -webkit-animation: 70s infinite linear moveBrandsAlt;
+    animation: 70s infinite linear moveBrandsAlt;
 }
 
 @media (max-width: 1200px) {

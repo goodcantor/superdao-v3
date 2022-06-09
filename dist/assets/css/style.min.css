@@ -522,6 +522,7 @@ a:focus {
   color: #ffc803;
 }
 .footer__social {
+  padding: 30px 0;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -830,6 +831,7 @@ footer .header__li-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
 }
 .header__top {
   display: flex;
@@ -872,7 +874,7 @@ footer .header__li-item {
   flex-direction: column;
   gap: 12px;
   width: 100%;
-  margin-bottom: 62px;
+  margin-bottom: 32px;
 }
 
 .header input {
