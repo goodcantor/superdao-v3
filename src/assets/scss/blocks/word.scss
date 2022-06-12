@@ -1,5 +1,7 @@
 .word {
 	&__inner {
+		position: relative;
+
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -68,17 +70,31 @@
 	&__text {
 		max-width: 1140px;
 		text-align: center;
+		display: flex;
+		gap: 0 40px;
+		flex-wrap: wrap;
+		justify-content: center;
 
 		@include breakpoint(1200px) {
-			max-width: 693px;
+			font-size: 32px;
+			line-height: 50px;
+			gap: 0 32px;
+			max-width: 700px;
+		}
+		@include breakpoint(768px) {
+			font-size: 20px;
+			line-height: 36px;
+			gap: 0 20px;
+			max-width: 400px;
 		}
 	}
 
 	&__span {
+		white-space: nowrap;
 		font-family: 'Loos Wide';
 		font-weight: 700;
-		font-size: 40px;
-		line-height: 74px;
+		font-size: 38px;
+		line-height: 64px;
 
 		text-align: center;
 		color: #37424d;

@@ -97,39 +97,103 @@ const fiveWord = sectionWordContent + 400;
 const sixWord = sectionWordContent + 500;
 const sevenWord = sectionWordContent + 600;
 
-window.addEventListener('scroll', () => {
-	if (oneWord <= window.pageYOffset && twoWord > window.pageYOffset) {
-		words[0].classList.add('active');
-	} else words[0].classList.remove('active');
+window.addEventListener('resize', () => {
+	window.removeEventListener('scroll', wordListeneer);
 
-	if (twoWord <= window.pageYOffset && threeWord > window.pageYOffset) {
-		words[1].classList.add('active');
-	} else words[1].classList.remove('active');
+	console.log('resize');
 
-	if (threeWord <= window.pageYOffset && fourWord > window.pageYOffset) {
-		words[2].classList.add('active');
-	} else words[2].classList.remove('active');
+	const sectionWordStart = getTopElement(document.querySelector('.word')) - 400;
+	const sectionWordContent = sectionWordStart;
+	const sectionWordEnd = sectionWordStart + sectionWordContent;
 
-	if (fourWord <= window.pageYOffset && fiveWord > window.pageYOffset) {
-		words[3].classList.add('active');
-	} else words[3].classList.remove('active');
+	const oneWord = sectionWordContent;
+	const twoWord = sectionWordContent + 100;
+	const threeWord = sectionWordContent + 200;
+	const fourWord = sectionWordContent + 300;
+	const fiveWord = sectionWordContent + 400;
+	const sixWord = sectionWordContent + 500;
+	const sevenWord = sectionWordContent + 600;
 
-	if (fiveWord <= window.pageYOffset && sixWord > window.pageYOffset) {
-		words[4].classList.add('active');
-	} else words[4].classList.remove('active');
-
-	if (sixWord <= window.pageYOffset && sevenWord > window.pageYOffset) {
-		words[5].classList.add('active');
-	} else words[5].classList.remove('active');
-
-	if (sevenWord <= window.pageYOffset && sevenWord + 100 > window.pageYOffset) {
-		words[6].classList.add('active');
-	} else words[6].classList.remove('active');
-
-	// console.log(sevenWord);
-	// console.log(window.pageYOffset);
-	// console.log(sectionWordEnd);
+	wordListeneer(
+		sectionWordStart,
+		sectionWordContent,
+		sectionWordEnd,
+		words,
+		oneWord,
+		twoWord,
+		threeWord,
+		fourWord,
+		fiveWord,
+		sixWord,
+		sevenWord
+	);
 });
+
+function wordListeneer(
+	sectionWordStart,
+	sectionWordContent,
+	sectionWordEnd,
+	words,
+	oneWord,
+	twoWord,
+	threeWord,
+	fourWord,
+	fiveWord,
+	sixWord,
+	sevenWord
+) {
+	console.log('func');
+	window.addEventListener('scroll', () => {
+		if (oneWord <= window.pageYOffset && twoWord > window.pageYOffset) {
+			words[0].classList.add('active');
+		} else words[0].classList.remove('active');
+
+		if (twoWord <= window.pageYOffset && threeWord > window.pageYOffset) {
+			words[1].classList.add('active');
+		} else words[1].classList.remove('active');
+
+		if (threeWord <= window.pageYOffset && fourWord > window.pageYOffset) {
+			words[2].classList.add('active');
+		} else words[2].classList.remove('active');
+
+		if (fourWord <= window.pageYOffset && fiveWord > window.pageYOffset) {
+			words[3].classList.add('active');
+		} else words[3].classList.remove('active');
+
+		if (fiveWord <= window.pageYOffset && sixWord > window.pageYOffset) {
+			words[4].classList.add('active');
+		} else words[4].classList.remove('active');
+
+		if (sixWord <= window.pageYOffset && sevenWord > window.pageYOffset) {
+			words[5].classList.add('active');
+		} else words[5].classList.remove('active');
+
+		if (
+			sevenWord <= window.pageYOffset &&
+			sevenWord + 100 > window.pageYOffset
+		) {
+			words[6].classList.add('active');
+		} else words[6].classList.remove('active');
+
+		// console.log(sevenWord);
+		// console.log(window.pageYOffset);
+		// console.log(sectionWordEnd);
+	});
+}
+
+wordListeneer(
+	sectionWordStart,
+	sectionWordContent,
+	sectionWordEnd,
+	words,
+	oneWord,
+	twoWord,
+	threeWord,
+	fourWord,
+	fiveWord,
+	sixWord,
+	sevenWord
+);
 
 const constellation = (element) => {
 	window.addEventListener('scroll', (e) => {
