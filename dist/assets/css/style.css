@@ -1880,6 +1880,7 @@ footer .header__li-item {
 }
 
 .ready__block {
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
     border-radius: 30px;
     background: #010001;
     width: 100%;
