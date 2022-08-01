@@ -1,4 +1,3 @@
-//burger
 let burger = document.querySelector(".header__burger");
 let cross = document.querySelector(".header__top-cross");
 let mobMenu = document.querySelector(".header__mobile");
